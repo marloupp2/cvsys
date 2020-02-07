@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+    <style type="text/css">
+    </style>
+<div class="container" align="center">
+
+    <form action="electionstart.php" method="POST" class=""  role="form"><br>
+        <fieldset>
+             <p style="font-weight: bold;">START :</p>
+            <div class="form-group">
+                <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="MM d yyyy" data-link-field="dtp_input1">
+                    <input class="form-control"  size="16" name="start1" type="text" required="">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                    <input type="hidden" id="dtp_input1" name="timestart" value="" data-date-format="H:ii p" data-link-field="dtp_input1"/>
+                </div>
+			
+       
+            <p style="font-weight: bold;" >END:</p>
+                <div class="input-group date form_datetime1 col-md-5" data-date="" data-date-format="MM d yyyy" data-link-field="dtp_input2">
+                    <input class="form-control" name="ended"  size="16" type="text" required="">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                    <input type="hidden" id="dtp_input2" name="timeend" value="" data-date-format="H:ii p" data-link-field="dtp_input1"/>
+                </div>
+
+<div class="form-group container">
+  <label for="sel1">ELECTION SET :</label>
+  <select class="form-control" id="sel1" name="set" required="">
+    <option></option>
+    <option value="flp">FLP ELECTION</option>
+    <option value="ssg">SSG ELECTION</option>
+    <option value="flpssg">FLP & SSG ELECTION</option>
+  </select>
+</div>
+
+            </div>
+            <input type="submit" name="submit" class="btn btn-outline-danger" align="center">
+        </fieldset>
+    </form>
+</div>
+
+<script type="text/javascript" src="./jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    $('.form_datetime,.form_datetime1').datetimepicker({
+        language:  'en',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+        showMeridian: 1
+    });
+	$('.form_date').datetimepicker({
+        language:  'en',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    });
+	$('.form_time').datetimepicker({
+        language:  'en',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 1,
+		minView: 0,
+		maxView: 1,
+		forceParse: 0
+    });
+</script>
+
+</body>
+</html>
